@@ -1,0 +1,8 @@
+<h1>My Discounts</h1>
+<% @merchant.discounts.each_with_index do |discount, index| %>
+  <section id="discount-<%= discount.id %>">
+    <p><%= index + 1 %>. <%= discount.percentage %>% off <%= discount.item_count %> or more items.
+     This discount is <b><%= discount.status %></b>. (activate/deactivate logic)
+  </section>
+<% end %>
+<p><%= link_to 'Add Discount', '/merchant/discounts/new' %>
