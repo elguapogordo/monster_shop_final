@@ -1,0 +1,9 @@
+<%= form_tag path, method: method do %>
+  <p><%= label_tag :percentage %>
+  <%= text_field_tag :percentage %>
+
+  <p><%= label_tag :minimum_items %>
+  <%= text_field_tag :item_count %>
+
+  <p><%= submit_tag button_text %>
+<% end %>
