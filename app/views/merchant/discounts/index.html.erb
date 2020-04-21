@@ -1,7 +1,7 @@
 <h1>My Discounts</h1>
 <% @merchant.discounts.each_with_index do |discount, index| %>
   <section id="discount-<%= discount.id %>">
-    <h3><%= index + 1 %>. <%= link_to "Discount ID: #{discount.id}", "/discounts/#{discount.id}" %></h3>
+    <h3><%= index + 1 %>. <%= link_to "Discount ID: #{discount.id}", "/merchant/discounts/#{discount.id}" %></h3>
       <%= discount.percentage %>% off <%= discount.item_count %> or more items.
      This discount is <b><%= discount.status %></b>. (activate/deactivate logic)
   </section>
