@@ -8,7 +8,7 @@ class Discount < ApplicationRecord
   validates :item_count, numericality: { greater_than: 0 }
 
   def status
-    active? ? "active" : "inactive"
+    active? ? "Active" : "Inactive"
   end
 
 end

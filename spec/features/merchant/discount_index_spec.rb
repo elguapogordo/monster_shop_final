@@ -23,13 +23,13 @@ RSpec.describe "merchant discount index", type: :feature do
         within "#discount-#{@discount1.id}" do
           expect(page).to have_content("Discount ID: #{@discount1.id}")
           expect(page).to have_content('5% off 5 or more items.')
-          expect(page).to have_content('This discount is inactive.')
+          expect(page).to have_content('This discount is Inactive.')
         end
 
         within "#discount-#{@discount2.id}" do
           expect(page).to have_content("Discount ID: #{@discount2.id}")
           expect(page).to have_content('10% off 15 or more items.')
-          expect(page).to have_content('This discount is active.')
+          expect(page).to have_content('This discount is Active.')
         end
 
         expect(page).to_not have_content('7% off 7 or more items.')
