@@ -24,7 +24,7 @@ RSpec.describe "merchant discount add", type: :feature do
         visit '/merchant/discounts'
 
         expect(page).to_not have_content('10% off 10 or more items.')
-        expect(page).to_not have_content('This discount is active.')
+        expect(page).to_not have_content('This discount is Active.')
 
         visit '/merchant/discounts/new'
 
@@ -35,7 +35,7 @@ RSpec.describe "merchant discount add", type: :feature do
 
         expect(current_path).to eq('/merchant/discounts')
         expect(page).to have_content('10% off 10 or more items.')
-        expect(page).to have_content('This discount is active.')
+        expect(page).to have_content('This discount is Active.')
       end
     end
   end
