@@ -45,5 +45,37 @@ RSpec.describe "updating discounts", type: :feature do
         end
       end
     end
+
+    describe "toggle discount status" do
+      context "when i visit my discount index, i see all of my discounts and their status" do
+        it "and i can toggle their status with a link next to that discount" do
+          visit "/merchant/discounts"
+
+          within "#discount-#{@discount1.id}" do
+            expect(page).to have_content('This discount is Inactive.')
+            expect(page).to have_link("Activate")
+            click_link("Activate")
+          end
+
+          visit "/merchant/discounts"
+
+          # within "#discount-#{@discount1.id}" do
+          #   expect(page).to have_link("Deactivate")
+          # end
+
+          within "#discount-#{@discount2.id}" do
+            expect(page).to have_content('This discount is Active.')
+            expect(page).to have_link("Deactivate")
+            click_on("Deactivate")
+          end
+
+          visit "/merchant/discounts"
+
+          # within "#discount-#{@discount2.id}" do
+          #   expect(page).to have_link("Activate")
+          # end
+        end
+      end
+    end
   end
 end
