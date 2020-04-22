@@ -27,3 +27,5 @@ mike.items.create!(name: 'Hulkster', description: "Brother!", price: 45, image: 
 
 #discounts
 discount1 = mike.discounts.create(percentage: 5, item_count: 5, active: true)
+discount2 = mike.discounts.create(percentage: 7, item_count: 10, active: true)
+discount3 = megan.discounts.create(percentage: 10, item_count: 5, active: true)
