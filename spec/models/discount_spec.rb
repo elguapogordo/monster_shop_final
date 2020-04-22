@@ -26,8 +26,8 @@ RSpec.describe Discount do
     end
 
     it '.status' do
-      expect(@discount1.status).to eq('active')
-      expect(@discount2.status).to eq('inactive')
+      expect(@discount1.status).to eq('Active')
+      expect(@discount2.status).to eq('Inactive')
     end
 
   end

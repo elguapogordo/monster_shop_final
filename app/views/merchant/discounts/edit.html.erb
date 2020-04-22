@@ -1,0 +1,4 @@
+<h1>Edit Discount</h1>
+<p>Current Percentage: <%= @discount.percentage %><br>
+Current Minimum Items: <%= @discount.item_count %>
+<p><%= render partial: 'form', locals: {path: "/merchant/discounts/#{@discount.id}", method: :patch, button_text: 'Submit'} %>
