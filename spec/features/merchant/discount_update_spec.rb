@@ -57,11 +57,12 @@ RSpec.describe "updating discounts", type: :feature do
             click_link("Activate")
           end
 
+          @merchant1.reload
           visit "/merchant/discounts"
 
-          # within "#discount-#{@discount1.id}" do
-          #   expect(page).to have_link("Deactivate")
-          # end
+          within "#discount-#{@discount1.id}" do
+            expect(page).to have_link("Deactivate")
+          end
 
           within "#discount-#{@discount2.id}" do
             expect(page).to have_content('This discount is Active.')
@@ -69,11 +70,12 @@ RSpec.describe "updating discounts", type: :feature do
             click_on("Deactivate")
           end
 
+          @merchant1.reload
           visit "/merchant/discounts"
 
-          # within "#discount-#{@discount2.id}" do
-          #   expect(page).to have_link("Activate")
-          # end
+          within "#discount-#{@discount2.id}" do
+            expect(page).to have_link("Activate")
+          end
         end
       end
     end

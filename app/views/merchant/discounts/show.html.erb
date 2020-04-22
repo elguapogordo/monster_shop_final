@@ -5,4 +5,4 @@
 <p>Created: <%= @discount.created_at %>
 <p>Last Updated: <%= @discount.updated_at %>
 <p><%= link_to "Edit Discount", "/merchant/discounts/#{@discount.id}/edit" %>
-<p><%= link_to "Delete Discount", "/merchant/discounts/#{@discount.id}/delete", method: :destroy %>
+<p><%= link_to "Delete Discount", "/merchant/discounts/#{@discount.id}", method: :delete %>
