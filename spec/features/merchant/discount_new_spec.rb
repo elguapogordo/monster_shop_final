@@ -29,6 +29,20 @@ RSpec.describe "merchant discount add", type: :feature do
         visit '/merchant/discounts/new'
 
         expect(page).to have_content('Add a new Discount')
+        fill_in 'Percentage', with: 0
+        fill_in 'item_count', with: 10
+        click_button('Submit')
+
+        expect(current_path).to eq('/merchant/discounts')
+        expect(page).to have_content('The discount percentage must be between 1 and 100.')
+
+        fill_in 'Percentage', with: 10
+        fill_in 'item_count', with: 0
+        click_button('Submit')
+
+        expect(current_path).to eq('/merchant/discounts')
+        expect(page).to have_content('must be greater than 0')
+
         fill_in 'Percentage', with: 10
         fill_in 'item_count', with: 10
         click_button('Submit')
