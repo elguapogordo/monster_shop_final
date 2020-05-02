@@ -40,7 +40,7 @@ RSpec.describe 'Site Navigation' do
           click_link 'Cart: 0'
         end
 
-        expect(current_path).to eq(cart_path)
+        expect(current_path).to eq(cart_index_path)
       end
 
       it 'the login page' do
@@ -50,7 +50,7 @@ RSpec.describe 'Site Navigation' do
           click_link 'Log In'
         end
 
-        expect(current_path).to eq(login_path)
+        expect(current_path).to eq(new_session_path)
       end
 
       it 'the registraton page' do
@@ -60,7 +60,7 @@ RSpec.describe 'Site Navigation' do
           click_link 'Register'
         end
 
-        expect(current_path).to eq(registration_path)
+        expect(current_path).to eq(new_user_path)
       end
     end
   end
@@ -117,7 +117,7 @@ RSpec.describe 'Site Navigation' do
           click_link 'Cart: 0'
         end
 
-        expect(current_path).to eq(cart_path)
+        expect(current_path).to eq(cart_index_path)
       end
 
       it 'the logout page' do
@@ -209,7 +209,7 @@ RSpec.describe 'Site Navigation' do
           click_link 'Cart: 0'
         end
 
-        expect(current_path).to eq(cart_path)
+        expect(current_path).to eq(cart_index_path)
       end
 
       it 'the logout page' do

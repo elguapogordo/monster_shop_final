@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "cart show page displays item discounts", type: :feature do
+RSpec.describe "cart index page displays item discounts", type: :feature do
   describe "as a user, when i visit my cart page and adjust item quantities" do
     it "the page correctly calculates and displays discounts every time quantities change" do
       mike = Merchant.create(name: "Mike\'s Mustache Emporium", address: '127 Main St', city: 'Denver', state: 'CO', zip: 80218)
