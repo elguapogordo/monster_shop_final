@@ -20,7 +20,7 @@ RSpec.describe "User Profile Path" do
     end
 
     it "I can update my profile data" do
-      visit login_path
+      visit new_session_path
 
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
@@ -55,7 +55,7 @@ RSpec.describe "User Profile Path" do
     end
 
     it "I can update my password" do
-      visit login_path
+      visit new_session_path
 
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
@@ -77,7 +77,7 @@ RSpec.describe "User Profile Path" do
 
       click_link 'Log Out'
 
-      visit login_path
+      visit new_session_path
 
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
@@ -85,7 +85,7 @@ RSpec.describe "User Profile Path" do
 
       expect(page).to have_content("Your email or password was incorrect!")
 
-      visit login_path
+      visit new_session_path
 
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: "newpassword"
