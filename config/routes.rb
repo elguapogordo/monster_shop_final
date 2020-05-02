@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   # get '/login', to: 'sessions#new'
   # post '/login', to: 'sessions#login'
-  get '/logout', to: 'sessions#destroy'
+  # get '/logout', to: 'sessions#destroy'
 
   namespace :merchant do
     get '/', to: 'dashboard#index', as: :dashboard
